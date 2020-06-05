@@ -15,7 +15,6 @@
 		95FBFA58248AB64100D61123 /* ImageGridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA57248AB64100D61123 /* ImageGridTests.swift */; };
 		95FBFA62248AB69600D61123 /* GridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA60248AB69500D61123 /* GridViewCell.swift */; };
 		95FBFA63248AB69600D61123 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA61248AB69500D61123 /* CollectionViewController.swift */; };
-		95FBFA65248AB6B300D61123 /* ExtensionUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA64248AB6B300D61123 /* ExtensionUIImageView.swift */; };
 		95FBFA67248AB6E200D61123 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA66248AB6E200D61123 /* User.swift */; };
 		95FBFA76248AB77600D61123 /* FeedLoaderiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FBFA6D248AB77600D61123 /* FeedLoaderiOS.framework */; };
 		95FBFA7F248AB77600D61123 /* FeedLoaderiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 95FBFA6F248AB77600D61123 /* FeedLoaderiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -25,6 +24,8 @@
 		95FBFA9E248AB79C00D61123 /* FeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA9D248AB79C00D61123 /* FeedLoaderTests.swift */; };
 		95FBFAA0248AB79C00D61123 /* FeedLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 95FBFA92248AB79C00D61123 /* FeedLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95FBFAAA248ABEC500D61123 /* FeedLoaderiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA7C248AB77600D61123 /* FeedLoaderiOSTests.swift */; };
+		95FBFAAF248AC1CF00D61123 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFAAE248AC1CF00D61123 /* Cache.swift */; };
+		95FBFAB0248AC43F00D61123 /* ExtensionUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA64248AB6B300D61123 /* ExtensionUIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		95FBFA98248AB79C00D61123 /* FeedLoaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedLoaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95FBFA9D248AB79C00D61123 /* FeedLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderTests.swift; sourceTree = "<group>"; };
 		95FBFA9F248AB79C00D61123 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95FBFAAE248AC1CF00D61123 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,8 +208,10 @@
 		95FBFA6E248AB77600D61123 /* FeedLoaderiOS */ = {
 			isa = PBXGroup;
 			children = (
+				95FBFA64248AB6B300D61123 /* ExtensionUIImageView.swift */,
 				95FBFA6F248AB77600D61123 /* FeedLoaderiOS.h */,
 				95FBFA70248AB77600D61123 /* Info.plist */,
+				95FBFAAE248AC1CF00D61123 /* Cache.swift */,
 			);
 			path = FeedLoaderiOS;
 			sourceTree = "<group>";
@@ -243,7 +247,6 @@
 			isa = PBXGroup;
 			children = (
 				95FBFA66248AB6E200D61123 /* User.swift */,
-				95FBFA64248AB6B300D61123 /* ExtensionUIImageView.swift */,
 				95FBFA61248AB69500D61123 /* CollectionViewController.swift */,
 				95FBFA60248AB69500D61123 /* GridViewCell.swift */,
 			);
@@ -419,6 +422,7 @@
 					};
 					95FBFA6C248AB77600D61123 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 					95FBFA74248AB77600D61123 = {
 						CreatedOnToolsVersion = 11.5;
@@ -511,7 +515,6 @@
 				95FBFA41248AB63F00D61123 /* AppDelegate.swift in Sources */,
 				95FBFA62248AB69600D61123 /* GridViewCell.swift in Sources */,
 				95FBFA43248AB63F00D61123 /* SceneDelegate.swift in Sources */,
-				95FBFA65248AB6B300D61123 /* ExtensionUIImageView.swift in Sources */,
 				95FBFA63248AB69600D61123 /* CollectionViewController.swift in Sources */,
 				95FBFA67248AB6E200D61123 /* User.swift in Sources */,
 			);
@@ -529,6 +532,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95FBFAB0248AC43F00D61123 /* ExtensionUIImageView.swift in Sources */,
+				95FBFAAF248AC1CF00D61123 /* Cache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +625,7 @@
 		95FBFA5B248AB64100D61123 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -692,6 +698,7 @@
 		95FBFA5C248AB64100D61123 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;

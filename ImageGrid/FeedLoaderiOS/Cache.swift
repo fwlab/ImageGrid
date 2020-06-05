@@ -6,3 +6,5 @@
 //
 
 import Foundation
+
+public let cache = NSCache<AnyObject, AnyObject>()

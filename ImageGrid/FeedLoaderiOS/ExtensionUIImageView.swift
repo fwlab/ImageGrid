@@ -9,7 +9,7 @@ import UIKit
 
 public let imageCache = NSCache<AnyObject, AnyObject>()
 
-extension UIImageView {
+public extension UIImageView {
     func fetchImage(from url:URL) {
         self.image = nil
         let imageFromCache = imageCache.object(forKey: url as AnyObject)
