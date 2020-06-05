@@ -18,13 +18,13 @@
 		95FBFA65248AB6B300D61123 /* ExtensionUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA64248AB6B300D61123 /* ExtensionUIImageView.swift */; };
 		95FBFA67248AB6E200D61123 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA66248AB6E200D61123 /* User.swift */; };
 		95FBFA76248AB77600D61123 /* FeedLoaderiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FBFA6D248AB77600D61123 /* FeedLoaderiOS.framework */; };
-		95FBFA7D248AB77600D61123 /* FeedLoaderiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA7C248AB77600D61123 /* FeedLoaderiOSTests.swift */; };
 		95FBFA7F248AB77600D61123 /* FeedLoaderiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 95FBFA6F248AB77600D61123 /* FeedLoaderiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95FBFA82248AB77600D61123 /* FeedLoaderiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FBFA6D248AB77600D61123 /* FeedLoaderiOS.framework */; };
 		95FBFA83248AB77600D61123 /* FeedLoaderiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95FBFA6D248AB77600D61123 /* FeedLoaderiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95FBFA99248AB79C00D61123 /* FeedLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FBFA90248AB79C00D61123 /* FeedLoader.framework */; };
 		95FBFA9E248AB79C00D61123 /* FeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA9D248AB79C00D61123 /* FeedLoaderTests.swift */; };
 		95FBFAA0248AB79C00D61123 /* FeedLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 95FBFA92248AB79C00D61123 /* FeedLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95FBFAAA248ABEC500D61123 /* FeedLoaderiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA7C248AB77600D61123 /* FeedLoaderiOSTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -536,7 +536,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95FBFA7D248AB77600D61123 /* FeedLoaderiOSTests.swift in Sources */,
+				95FBFAAA248ABEC500D61123 /* FeedLoaderiOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
