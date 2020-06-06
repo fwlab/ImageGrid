@@ -6,7 +6,11 @@
 //
 
 import XCTest
-import FeedLoader
+#if os(OSX)
+    import FeedLoader
+#else
+    import FeedLoaderiOS
+#endif
 
 class RemoteFeedLoaderTests: XCTestCase {
     
