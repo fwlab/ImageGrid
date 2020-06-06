@@ -6,6 +6,8 @@
 //
 
 import XCTest
+
+// ensure this tests run on Mac as well on iOS
 #if os(OSX)
     import FeedLoader
 #else
