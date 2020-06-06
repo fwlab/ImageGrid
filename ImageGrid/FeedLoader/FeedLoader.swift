@@ -7,8 +7,8 @@
 
 import Foundation
 
-
+public typealias FeedResult = Result<([User],HTTPURLResponse),RemoteFeedError>
 
 public protocol FeedLoader {
-    func load(completion: @escaping (HTTPClientResult)->Void )
+    func load(completion: @escaping (FeedResult)->Void )
 }

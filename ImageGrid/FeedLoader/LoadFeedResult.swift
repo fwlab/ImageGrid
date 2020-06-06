@@ -9,5 +9,5 @@ import Foundation
 
 public enum LoadFeedResult {
     case success(Results)
-    case error(Error)
+    case error(RemoteFeedError)
 }

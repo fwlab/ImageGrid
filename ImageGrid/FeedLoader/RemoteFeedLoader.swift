@@ -7,26 +7,30 @@
 
 import Foundation
 
-
-
 public final class RemoteFeedLoader: FeedLoader {
     
     private let url: URL
     private let client: HTTPClient
 
+    public typealias FeedResult = Result<([User],HTTPURLResponse),RemoteFeedError>
     
-    public func load(completion: @escaping (HTTPClientResult) -> Void) {
+    public func load(completion: @escaping (FeedResult) -> Void) {
         client.get(from: url) { result in
             switch result {
-                
             case .success(let data, let response):
                 guard response.statusCode == 200
                     else {
                         completion(.failure(.invalidResponse))
                         return
                 }
+                // ensure it is valid JSON
                 if let _ = try? JSONSerialization.jsonObject(with: data) {
-                    completion(.success(data, response))
+                    if let results = self.decode(data: data) {
+                        print (results)
+                        completion(.success((results, response)))
+                    }
+                    
+
                 } else {
                   completion(.failure(.invalidData))
                 }
@@ -39,5 +43,17 @@ public final class RemoteFeedLoader: FeedLoader {
     public init(from url:URL, client: HTTPClient) {
         self.url = url
         self.client = client
+    }
+    
+    private func decode(data:Data) -> [User]? {
+        
+        let dataAsString = String(data: data, encoding: .utf8)
+        let decoder = JSONDecoder()
+        if let results = try? decoder.decode(Results.self, from: data) {
+            return results.results
+        } else {
+            print ("decoding error")
+            return nil
+        }
     }
 }
