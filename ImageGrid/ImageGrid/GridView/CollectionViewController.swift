@@ -12,7 +12,7 @@ private let reuseIdentifier = "GridViewCell"
 
 
 class CollectionViewController: UICollectionViewController {
-
+    
     func loadData() {
         let jsonUrlString = "https://randomuser.me/api/?results=500"
         guard let url = URL (string: jsonUrlString)

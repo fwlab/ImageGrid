@@ -15,17 +15,20 @@
 		95FBFA58248AB64100D61123 /* ImageGridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA57248AB64100D61123 /* ImageGridTests.swift */; };
 		95FBFA62248AB69600D61123 /* GridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA60248AB69500D61123 /* GridViewCell.swift */; };
 		95FBFA63248AB69600D61123 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA61248AB69500D61123 /* CollectionViewController.swift */; };
-		95FBFA67248AB6E200D61123 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA66248AB6E200D61123 /* User.swift */; };
 		95FBFA76248AB77600D61123 /* FeedLoaderiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FBFA6D248AB77600D61123 /* FeedLoaderiOS.framework */; };
 		95FBFA7F248AB77600D61123 /* FeedLoaderiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 95FBFA6F248AB77600D61123 /* FeedLoaderiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95FBFA82248AB77600D61123 /* FeedLoaderiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FBFA6D248AB77600D61123 /* FeedLoaderiOS.framework */; };
 		95FBFA83248AB77600D61123 /* FeedLoaderiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95FBFA6D248AB77600D61123 /* FeedLoaderiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95FBFA99248AB79C00D61123 /* FeedLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FBFA90248AB79C00D61123 /* FeedLoader.framework */; };
-		95FBFA9E248AB79C00D61123 /* FeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA9D248AB79C00D61123 /* FeedLoaderTests.swift */; };
 		95FBFAA0248AB79C00D61123 /* FeedLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 95FBFA92248AB79C00D61123 /* FeedLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95FBFAAA248ABEC500D61123 /* FeedLoaderiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA7C248AB77600D61123 /* FeedLoaderiOSTests.swift */; };
 		95FBFAAF248AC1CF00D61123 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFAAE248AC1CF00D61123 /* Cache.swift */; };
 		95FBFAB0248AC43F00D61123 /* ExtensionUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA64248AB6B300D61123 /* ExtensionUIImageView.swift */; };
+		95FBFAB2248AC66100D61123 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFAB1248AC66100D61123 /* Loader.swift */; };
+		95FBFAB3248AC66C00D61123 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFAB1248AC66100D61123 /* Loader.swift */; };
+		95FBFAB4248ADEC900D61123 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA66248AB6E200D61123 /* User.swift */; };
+		95FBFAB5248ADECE00D61123 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA66248AB6E200D61123 /* User.swift */; };
+		95FBFAB8248AFFF100D61123 /* RemoteFeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFAB6248AFFF100D61123 /* RemoteFeedLoaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,9 +108,10 @@
 		95FBFA92248AB79C00D61123 /* FeedLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedLoader.h; sourceTree = "<group>"; };
 		95FBFA93248AB79C00D61123 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95FBFA98248AB79C00D61123 /* FeedLoaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedLoaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		95FBFA9D248AB79C00D61123 /* FeedLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderTests.swift; sourceTree = "<group>"; };
 		95FBFA9F248AB79C00D61123 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95FBFAAE248AC1CF00D61123 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		95FBFAB1248AC66100D61123 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		95FBFAB6248AFFF100D61123 /* RemoteFeedLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,7 +232,9 @@
 		95FBFA91248AB79C00D61123 /* FeedLoader */ = {
 			isa = PBXGroup;
 			children = (
+				95FBFA66248AB6E200D61123 /* User.swift */,
 				95FBFA92248AB79C00D61123 /* FeedLoader.h */,
+				95FBFAB1248AC66100D61123 /* Loader.swift */,
 				95FBFA93248AB79C00D61123 /* Info.plist */,
 			);
 			path = FeedLoader;
@@ -237,8 +243,8 @@
 		95FBFA9C248AB79C00D61123 /* FeedLoaderTests */ = {
 			isa = PBXGroup;
 			children = (
-				95FBFA9D248AB79C00D61123 /* FeedLoaderTests.swift */,
 				95FBFA9F248AB79C00D61123 /* Info.plist */,
+				95FBFAB6248AFFF100D61123 /* RemoteFeedLoaderTests.swift */,
 			);
 			path = FeedLoaderTests;
 			sourceTree = "<group>";
@@ -246,7 +252,6 @@
 		95FBFAA7248ABB3A00D61123 /* GridView */ = {
 			isa = PBXGroup;
 			children = (
-				95FBFA66248AB6E200D61123 /* User.swift */,
 				95FBFA61248AB69500D61123 /* CollectionViewController.swift */,
 				95FBFA60248AB69500D61123 /* GridViewCell.swift */,
 			);
@@ -430,6 +435,7 @@
 					};
 					95FBFA8F248AB79C00D61123 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 					95FBFA97248AB79C00D61123 = {
 						CreatedOnToolsVersion = 11.5;
@@ -516,7 +522,6 @@
 				95FBFA62248AB69600D61123 /* GridViewCell.swift in Sources */,
 				95FBFA43248AB63F00D61123 /* SceneDelegate.swift in Sources */,
 				95FBFA63248AB69600D61123 /* CollectionViewController.swift in Sources */,
-				95FBFA67248AB6E200D61123 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,8 +537,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95FBFAB4248ADEC900D61123 /* User.swift in Sources */,
 				95FBFAB0248AC43F00D61123 /* ExtensionUIImageView.swift in Sources */,
 				95FBFAAF248AC1CF00D61123 /* Cache.swift in Sources */,
+				95FBFAB3248AC66C00D61123 /* Loader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +556,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95FBFAB5248ADECE00D61123 /* User.swift in Sources */,
+				95FBFAB2248AC66100D61123 /* Loader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,7 +565,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95FBFA9E248AB79C00D61123 /* FeedLoaderTests.swift in Sources */,
+				95FBFAB8248AFFF100D61123 /* RemoteFeedLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1362,6 +1371,7 @@
 		95FBFAA5248AB79C00D61123 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1434,6 +1444,7 @@
 		95FBFAA6248AB79C00D61123 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
