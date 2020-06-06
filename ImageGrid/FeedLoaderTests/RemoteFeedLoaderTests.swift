@@ -11,11 +11,13 @@ import FeedLoader
 class RemoteFeedLoaderTests: XCTestCase {
     
     
+    // verify it does not request data without load()
     func test_init_doesNotRequestDataUponCreation() {
         let (_,client) = makeSUT()
         XCTAssertEqual(client.requestedURLs.count,0)
     }
 
+    // verify requested url matches client url
     func test_load_RequestsDataFromURL() {
         let url = anyURL()
         let (sut,client) = makeSUT(url: url)
@@ -23,6 +25,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         XCTAssertEqual(client.requestedURLs,[url])
     }
     
+    // if loads is invoked twice, verify it requests data twice
     func test_loadTwice_RequestsDataFromURLTwice() {
         let url = anyURL()
         let (sut,client) = makeSUT(url: url)
@@ -31,6 +34,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         XCTAssertEqual(client.requestedURLs,[url,url])
     }
     
+    // verify it delivers the same error client reports
     func test_load_deliversErrorOnClientError() {
         let (sut,client) = makeSUT()
         let clientError = RemoteFeedError(rawValue: "connectionError")!
@@ -48,6 +52,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         XCTAssertEqual(capturedErrors,[RemoteFeedError.connectionError])
     }
     
+    // if client gets a non 200 response, verify it is a response error
     func test_load_deliversErrorIfHttpResponseNot200() {
         let (sut,client) = makeSUT()
         var capturedErrors = [RemoteFeedError]()
@@ -63,7 +68,8 @@ class RemoteFeedLoaderTests: XCTestCase {
         client.complete(withStatusCode: 400)
         XCTAssertEqual(capturedErrors,[RemoteFeedError.invalidResponse])
     }
-    
+
+    // if client gets any non 200 response, verify it is a response error
     func test_load_deliversErrorForHttpResponsesNot200() {
         let (sut,client) = makeSUT()
         var capturedErrors = [RemoteFeedError]()
@@ -85,6 +91,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         }
     }
     
+    // verify that a response 200 is not considered an error
     func test_load_doesNotDeliverErrorForHttpResponses200() {
         let (sut,client) = makeSUT()
         var capturedErrors = [RemoteFeedError]()
@@ -106,6 +113,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         }
     }
 
+    // verify response for status code 200 is not nil
     func test_load_deliversNotNilResponseForHttpResponses200() {
         let (sut,client) = makeSUT()
         var capturedErrors = [RemoteFeedError]()
@@ -129,6 +137,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         }
     }
 
+    // verify status code 200 is considered success
     func test_load_deliversSuccessForHttpResponses200() {
         let (sut,client) = makeSUT()
         var capturedErrors = [RemoteFeedError]()
