@@ -133,7 +133,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         simulatedResponsesCodes.enumerated().forEach { index,responseCode in
             sut.load { result in
                 switch result {
-                case .success(let data,let response):
+                case .success( _,let response):
                     XCTAssertNotNil(response)
                     break
                 case .failure(let error):
@@ -158,7 +158,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         simulatedResponsesCodes.enumerated().forEach { index,responseCode in
             sut.load { result in
                 switch result {
-                case .success(let data,let response):
+                case .success( _,let response):
                     XCTAssertEqual(response.statusCode,200)
                     break
                 case .failure(let error):
@@ -180,7 +180,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         let responseCode = 200
         sut.load { result in
                 switch result {
-                case .success(let data,let response):
+                case .success( _,let response):
                     XCTAssertEqual(response.statusCode,200)
                     XCTFail()
                     break
