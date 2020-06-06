@@ -8,12 +8,13 @@
 import Foundation
 
 class RemoteFeedLoader: FeedLoader {
+    let client: HTTPClient
+    let url: URL
+
     func load(completion: @escaping (Results) -> Void) {
         client.get(from: url) { (results) in }
     }
 
-    let client: HTTPClient
-    let url: URL
     init(from url:URL, client: HTTPClient) {
         self.url = url
         self.client = client
