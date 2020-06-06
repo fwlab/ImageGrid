@@ -16,7 +16,6 @@ import XCTest
 
 class RemoteFeedLoaderTests: XCTestCase {
     
-    
     // verify it does not request data without load()
     func test_init_doesNotRequestDataUponCreation() {
         let (_,client) = makeSUT()

@@ -33,20 +33,8 @@ public final class RemoteFeedLoader: FeedLoader {
              case .failure(let error):
                 completion(.failure(error))
             }
-                
-//            case .success(let response as HTTPURLResponse?):
-//                if response?. == 200 {
-//                    completion(result)
-//                } else {
-//                    completion(.failure(.invalidResponse))
-//                }
-//            case .failure(_):
-//            }
-                
         }
-        
     }
-    
     
     public init(from url:URL, client: HTTPClient) {
         self.url = url
