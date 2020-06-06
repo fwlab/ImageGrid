@@ -8,3 +8,7 @@
 import Foundation
 
 
+
+public protocol FeedLoader {
+    func load(completion: @escaping (Results)->Void )
+}

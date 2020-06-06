@@ -8,37 +8,6 @@
 import XCTest
 @testable import FeedLoader
 
-enum LoadFeedResult {
-    case success(Results)
-    case error(Error)
-}
-
-protocol FeedLoader {
-    func load(completion: (Results)->Void )
-}
-
-protocol HTTPClient {
-    func get(from url: URL, completion: (Results)-> Void )
-}
-
-
-
-class RemoteFeedLoader: FeedLoader {
-    func load(completion: (Results) -> Void) {
-        client.get(from: url) { (results) in
-            
-        }
-    }
-
-    let client: HTTPClient
-    let url: URL
-    init(from url:URL, client: HTTPClient) {
-        self.url = url
-        self.client = client
-    }
-}
-
-
 class RemoteFeedLoaderTests: XCTestCase {
 
     func test_init_doesNotRequestDataUponCreation() {
