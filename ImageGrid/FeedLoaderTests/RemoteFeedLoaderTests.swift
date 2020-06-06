@@ -48,7 +48,8 @@ class RemoteFeedLoaderTests: XCTestCase {
         var capturedErrors = [RemoteFeedError]()
         sut.load { result in
             switch result {
-            case .success(_):
+            case .success(_,_):
+                XCTFail()
                 break
             case .failure(let error):
                 capturedErrors.append(error)
@@ -64,7 +65,8 @@ class RemoteFeedLoaderTests: XCTestCase {
         var capturedErrors = [RemoteFeedError]()
         sut.load { result in
             switch result {
-            case .success(_):
+            case .success(_,_):
+                XCTFail()
                 break
             case .failure(let error):
                 capturedErrors.append(error)
@@ -85,7 +87,8 @@ class RemoteFeedLoaderTests: XCTestCase {
         simulatedResponsesCodes.enumerated().forEach { index,responseCode in
             sut.load { result in
                 switch result {
-                case .success(_):
+                case .success(_,_):
+                    XCTFail()
                     break
                 case .failure(let error):
                     capturedErrors.append(error)
@@ -98,7 +101,7 @@ class RemoteFeedLoaderTests: XCTestCase {
     }
     
     // verify that a response 200 is not considered an error
-    func test_load_doesNotDeliverErrorForHttpResponses200() {
+    func test_load_doesNotDeliverErrorForHttpResponses200WithValidJSON() {
         let (sut,client) = makeSUT()
         var capturedErrors = [RemoteFeedError]()
         
@@ -107,19 +110,20 @@ class RemoteFeedLoaderTests: XCTestCase {
         simulatedResponsesCodes.enumerated().forEach { index,responseCode in
             sut.load { result in
                 switch result {
-                case .success(_):
+                case .success(_,_):
                     break
                 case .failure(let error):
                     capturedErrors.append(error)
                 }
             }
-            client.complete(withStatusCode: responseCode, at: index)
+            let data = Data("{\"results\": []}".utf8)
+            client.complete(withStatusCode: responseCode,data:data, at: index)
             
             XCTAssertEqual(capturedErrors.count,0)
         }
     }
 
-    // verify response for status code 200 is not nil
+    // verify response for status code 200 is not nil with valid JSON
     func test_load_deliversNotNilResponseForHttpResponses200() {
         let (sut,client) = makeSUT()
         var capturedErrors = [RemoteFeedError]()
@@ -129,7 +133,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         simulatedResponsesCodes.enumerated().forEach { index,responseCode in
             sut.load { result in
                 switch result {
-                case .success(let response as HTTPURLResponse?):
+                case .success(let data,let response):
                     XCTAssertNotNil(response)
                     break
                 case .failure(let error):
@@ -137,14 +141,15 @@ class RemoteFeedLoaderTests: XCTestCase {
                     XCTFail()
                 }
             }
-            client.complete(withStatusCode: responseCode, at: index)
+            let data = Data("{\"results\": []}".utf8)
+            client.complete(withStatusCode: responseCode,data:data, at: index)
             
             XCTAssertEqual(capturedErrors.count,0)
         }
     }
 
-    // verify status code 200 is considered success
-    func test_load_deliversSuccessForHttpResponses200() {
+    // verify status code 200 is considered success with valid JSON
+    func test_load_deliversSuccessForHttpResponses200WithValidJSON() {
         let (sut,client) = makeSUT()
         var capturedErrors = [RemoteFeedError]()
         
@@ -153,17 +158,39 @@ class RemoteFeedLoaderTests: XCTestCase {
         simulatedResponsesCodes.enumerated().forEach { index,responseCode in
             sut.load { result in
                 switch result {
-                case .success(let response as HTTPURLResponse?):
-                    XCTAssertEqual(response?.statusCode,200)
+                case .success(let data,let response):
+                    XCTAssertEqual(response.statusCode,200)
                     break
                 case .failure(let error):
                     capturedErrors.append(error)
                     XCTFail()
                 }
             }
-            client.complete(withStatusCode: responseCode, at: index)
+            let data = Data("{\"results\": []}".utf8)
+            client.complete(withStatusCode: responseCode,data:data, at: index)
             
-            XCTAssertEqual(capturedErrors.count,0)
+            XCTAssertEqual(capturedErrors,[])
+        }
+    }
+    
+    // verify status code 200 is considered failure with invalid JSON
+    func test_load_deliversErrorForHttpResponses200InvalidJSON() {
+        let (sut,client) = makeSUT()
+        var capturedErrors = [RemoteFeedError]()
+        let responseCode = 200
+        sut.load { result in
+                switch result {
+                case .success(let data,let response):
+                    XCTAssertEqual(response.statusCode,200)
+                    XCTFail()
+                    break
+                case .failure(let error):
+                    capturedErrors.append(error)
+                }
+        }
+        client.complete(withStatusCode: responseCode, data: invalidJSON() )
+            
+        XCTAssertEqual(capturedErrors,[RemoteFeedError.invalidData])
         }
     }
 
@@ -184,9 +211,11 @@ class RemoteFeedLoaderTests: XCTestCase {
         func complete(with error: RemoteFeedError, at index: Int = 0) {
             invocations[index].completion(.failure(error))
         }
-        func complete(withStatusCode: Int, at index: Int = 0) {
+        func complete(withStatusCode: Int,
+                      data: Data=invalidJSON(),
+                      at index: Int = 0 ) {
             if let response = HTTPURLResponse(url: requestedURLs[index], statusCode: withStatusCode, httpVersion: nil, headerFields: nil) {
-                invocations[index].completion(.success(response))
+                invocations[index].completion(.success(data,response))
             }
 
         }
@@ -200,4 +229,8 @@ class RemoteFeedLoaderTests: XCTestCase {
     func anyURL() -> URL {
         return URL(string: "https://any-url.com")!
     }
-}
+
+    func invalidJSON() -> Data {
+        return Data("this is invalid data".utf8)
+    }
+
