@@ -243,8 +243,8 @@
 				95FBFAB1248AC66100D61123 /* FeedLoader.swift */,
 				951BBFC1248B2931002E0DD0 /* LoadFeedResult.swift */,
 				951BBFBD248B284A002E0DD0 /* HTTPClient.swift */,
-				95FBFA93248AB79C00D61123 /* Info.plist */,
 				951BBFBF248B28DC002E0DD0 /* RemoteFeedLoader.swift */,
+				95FBFA93248AB79C00D61123 /* Info.plist */,
 			);
 			path = FeedLoader;
 			sourceTree = "<group>";
