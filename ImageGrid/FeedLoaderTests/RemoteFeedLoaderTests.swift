@@ -66,7 +66,7 @@ class RemoteFeedLoaderTests: XCTestCase {
     
  // MARK Helpers
     
-    class HTTPClientSpy: HTTPClient {
+    private class HTTPClientSpy: HTTPClient {
         var requestedURLs = [URL]()
 
         func get(from url: URL, completion: (Results) -> Void) {
