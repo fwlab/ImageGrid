@@ -8,7 +8,7 @@
 import Foundation
 
 public enum RemoteFeedError: String, Swift.Error {
-    case connection = "connection"
+    case connectionError = "connectionError"
     case invalidResponse = "invalidResponse"
     case invalidData = "invalidData"
 }
