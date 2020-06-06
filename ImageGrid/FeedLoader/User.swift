@@ -18,5 +18,5 @@ public struct User: Decodable {
 }
 
 public struct Results: Decodable {
-    var results: [User]
+    public var results: [User]
 }

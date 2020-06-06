@@ -7,25 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		951BBFBE248B284A002E0DD0 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951BBFBD248B284A002E0DD0 /* HTTPClient.swift */; };
+		951BBFC0248B28DC002E0DD0 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951BBFBF248B28DC002E0DD0 /* RemoteFeedLoader.swift */; };
+		951BBFC2248B2931002E0DD0 /* LoadFeedResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951BBFC1248B2931002E0DD0 /* LoadFeedResult.swift */; };
+		951BBFC4248B9CD5002E0DD0 /* RemoteFeedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951BBFC3248B9CD5002E0DD0 /* RemoteFeedError.swift */; };
+		951BBFC6248B9CF8002E0DD0 /* HTTPClientResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951BBFC5248B9CF8002E0DD0 /* HTTPClientResult.swift */; };
+		951BBFC7248B9F24002E0DD0 /* HTTPClientResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951BBFC5248B9CF8002E0DD0 /* HTTPClientResult.swift */; };
+		951BBFC8248BAF36002E0DD0 /* FeedLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 95FBFA92248AB79C00D61123 /* FeedLoader.h */; };
+		951BBFC9248BAF3D002E0DD0 /* LoadFeedResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951BBFC1248B2931002E0DD0 /* LoadFeedResult.swift */; };
+		951BBFCA248BAF41002E0DD0 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951BBFBD248B284A002E0DD0 /* HTTPClient.swift */; };
+		951BBFCB248BAF45002E0DD0 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951BBFBF248B28DC002E0DD0 /* RemoteFeedLoader.swift */; };
+		951BBFCC248BAF48002E0DD0 /* RemoteFeedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951BBFC3248B9CD5002E0DD0 /* RemoteFeedError.swift */; };
+		951BBFCD248BAF8A002E0DD0 /* RemoteFeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFAB6248AFFF100D61123 /* RemoteFeedLoaderTests.swift */; };
 		95FBFA41248AB63F00D61123 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA40248AB63F00D61123 /* AppDelegate.swift */; };
 		95FBFA43248AB63F00D61123 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA42248AB63F00D61123 /* SceneDelegate.swift */; };
-		95FBFA45248AB63F00D61123 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA44248AB63F00D61123 /* ViewController.swift */; };
 		95FBFA48248AB63F00D61123 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95FBFA46248AB63F00D61123 /* Main.storyboard */; };
 		95FBFA4A248AB64100D61123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95FBFA49248AB64100D61123 /* Assets.xcassets */; };
 		95FBFA4D248AB64100D61123 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95FBFA4B248AB64100D61123 /* LaunchScreen.storyboard */; };
 		95FBFA58248AB64100D61123 /* ImageGridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA57248AB64100D61123 /* ImageGridTests.swift */; };
 		95FBFA62248AB69600D61123 /* GridViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA60248AB69500D61123 /* GridViewCell.swift */; };
 		95FBFA63248AB69600D61123 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA61248AB69500D61123 /* CollectionViewController.swift */; };
-		95FBFA65248AB6B300D61123 /* ExtensionUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA64248AB6B300D61123 /* ExtensionUIImageView.swift */; };
-		95FBFA67248AB6E200D61123 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA66248AB6E200D61123 /* User.swift */; };
 		95FBFA76248AB77600D61123 /* FeedLoaderiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FBFA6D248AB77600D61123 /* FeedLoaderiOS.framework */; };
-		95FBFA7D248AB77600D61123 /* FeedLoaderiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA7C248AB77600D61123 /* FeedLoaderiOSTests.swift */; };
 		95FBFA7F248AB77600D61123 /* FeedLoaderiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 95FBFA6F248AB77600D61123 /* FeedLoaderiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		95FBFA82248AB77600D61123 /* FeedLoaderiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FBFA6D248AB77600D61123 /* FeedLoaderiOS.framework */; };
 		95FBFA83248AB77600D61123 /* FeedLoaderiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95FBFA6D248AB77600D61123 /* FeedLoaderiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95FBFA99248AB79C00D61123 /* FeedLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95FBFA90248AB79C00D61123 /* FeedLoader.framework */; };
-		95FBFA9E248AB79C00D61123 /* FeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA9D248AB79C00D61123 /* FeedLoaderTests.swift */; };
 		95FBFAA0248AB79C00D61123 /* FeedLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 95FBFA92248AB79C00D61123 /* FeedLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95FBFAAA248ABEC500D61123 /* FeedLoaderiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA7C248AB77600D61123 /* FeedLoaderiOSTests.swift */; };
+		95FBFAAF248AC1CF00D61123 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFAAE248AC1CF00D61123 /* Cache.swift */; };
+		95FBFAB0248AC43F00D61123 /* ExtensionUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA64248AB6B300D61123 /* ExtensionUIImageView.swift */; };
+		95FBFAB2248AC66100D61123 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFAB1248AC66100D61123 /* FeedLoader.swift */; };
+		95FBFAB3248AC66C00D61123 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFAB1248AC66100D61123 /* FeedLoader.swift */; };
+		95FBFAB4248ADEC900D61123 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA66248AB6E200D61123 /* User.swift */; };
+		95FBFAB5248ADECE00D61123 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA66248AB6E200D61123 /* User.swift */; };
+		95FBFAB8248AFFF100D61123 /* RemoteFeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFAB6248AFFF100D61123 /* RemoteFeedLoaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,10 +96,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		951BBFBD248B284A002E0DD0 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		951BBFBF248B28DC002E0DD0 /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
+		951BBFC1248B2931002E0DD0 /* LoadFeedResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedResult.swift; sourceTree = "<group>"; };
+		951BBFC3248B9CD5002E0DD0 /* RemoteFeedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedError.swift; sourceTree = "<group>"; };
+		951BBFC5248B9CF8002E0DD0 /* HTTPClientResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientResult.swift; sourceTree = "<group>"; };
 		95FBFA3D248AB63F00D61123 /* ImageGrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageGrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95FBFA40248AB63F00D61123 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95FBFA42248AB63F00D61123 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		95FBFA44248AB63F00D61123 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		95FBFA47248AB63F00D61123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95FBFA49248AB64100D61123 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95FBFA4C248AB64100D61123 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,8 +125,10 @@
 		95FBFA92248AB79C00D61123 /* FeedLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedLoader.h; sourceTree = "<group>"; };
 		95FBFA93248AB79C00D61123 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95FBFA98248AB79C00D61123 /* FeedLoaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeedLoaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		95FBFA9D248AB79C00D61123 /* FeedLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderTests.swift; sourceTree = "<group>"; };
 		95FBFA9F248AB79C00D61123 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95FBFAAE248AC1CF00D61123 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		95FBFAB1248AC66100D61123 /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
+		95FBFAB6248AFFF100D61123 /* RemoteFeedLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,17 +209,10 @@
 		95FBFA3F248AB63F00D61123 /* ImageGrid */ = {
 			isa = PBXGroup;
 			children = (
-				95FBFA40248AB63F00D61123 /* AppDelegate.swift */,
-				95FBFA42248AB63F00D61123 /* SceneDelegate.swift */,
-				95FBFA44248AB63F00D61123 /* ViewController.swift */,
-				95FBFA46248AB63F00D61123 /* Main.storyboard */,
-				95FBFA64248AB6B300D61123 /* ExtensionUIImageView.swift */,
-				95FBFA66248AB6E200D61123 /* User.swift */,
-				95FBFA61248AB69500D61123 /* CollectionViewController.swift */,
-				95FBFA60248AB69500D61123 /* GridViewCell.swift */,
-				95FBFA49248AB64100D61123 /* Assets.xcassets */,
-				95FBFA4B248AB64100D61123 /* LaunchScreen.storyboard */,
 				95FBFA4E248AB64100D61123 /* Info.plist */,
+				95FBFAA9248ABB9300D61123 /* Delegates */,
+				95FBFAA8248ABB5F00D61123 /* App Resources */,
+				95FBFAA7248ABB3A00D61123 /* GridView */,
 			);
 			path = ImageGrid;
 			sourceTree = "<group>";
@@ -215,8 +229,10 @@
 		95FBFA6E248AB77600D61123 /* FeedLoaderiOS */ = {
 			isa = PBXGroup;
 			children = (
+				95FBFA64248AB6B300D61123 /* ExtensionUIImageView.swift */,
 				95FBFA6F248AB77600D61123 /* FeedLoaderiOS.h */,
 				95FBFA70248AB77600D61123 /* Info.plist */,
+				95FBFAAE248AC1CF00D61123 /* Cache.swift */,
 			);
 			path = FeedLoaderiOS;
 			sourceTree = "<group>";
@@ -233,7 +249,14 @@
 		95FBFA91248AB79C00D61123 /* FeedLoader */ = {
 			isa = PBXGroup;
 			children = (
+				95FBFA66248AB6E200D61123 /* User.swift */,
 				95FBFA92248AB79C00D61123 /* FeedLoader.h */,
+				95FBFAB1248AC66100D61123 /* FeedLoader.swift */,
+				951BBFC1248B2931002E0DD0 /* LoadFeedResult.swift */,
+				951BBFBD248B284A002E0DD0 /* HTTPClient.swift */,
+				951BBFBF248B28DC002E0DD0 /* RemoteFeedLoader.swift */,
+				951BBFC3248B9CD5002E0DD0 /* RemoteFeedError.swift */,
+				951BBFC5248B9CF8002E0DD0 /* HTTPClientResult.swift */,
 				95FBFA93248AB79C00D61123 /* Info.plist */,
 			);
 			path = FeedLoader;
@@ -242,10 +265,38 @@
 		95FBFA9C248AB79C00D61123 /* FeedLoaderTests */ = {
 			isa = PBXGroup;
 			children = (
-				95FBFA9D248AB79C00D61123 /* FeedLoaderTests.swift */,
 				95FBFA9F248AB79C00D61123 /* Info.plist */,
+				95FBFAB6248AFFF100D61123 /* RemoteFeedLoaderTests.swift */,
 			);
 			path = FeedLoaderTests;
+			sourceTree = "<group>";
+		};
+		95FBFAA7248ABB3A00D61123 /* GridView */ = {
+			isa = PBXGroup;
+			children = (
+				95FBFA61248AB69500D61123 /* CollectionViewController.swift */,
+				95FBFA60248AB69500D61123 /* GridViewCell.swift */,
+			);
+			path = GridView;
+			sourceTree = "<group>";
+		};
+		95FBFAA8248ABB5F00D61123 /* App Resources */ = {
+			isa = PBXGroup;
+			children = (
+				95FBFA46248AB63F00D61123 /* Main.storyboard */,
+				95FBFA4B248AB64100D61123 /* LaunchScreen.storyboard */,
+				95FBFA49248AB64100D61123 /* Assets.xcassets */,
+			);
+			path = "App Resources";
+			sourceTree = "<group>";
+		};
+		95FBFAA9248ABB9300D61123 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				95FBFA40248AB63F00D61123 /* AppDelegate.swift */,
+				95FBFA42248AB63F00D61123 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95FBFA7F248AB77600D61123 /* FeedLoaderiOS.h in Headers */,
+				951BBFC8248BAF36002E0DD0 /* FeedLoader.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +450,7 @@
 					};
 					95FBFA6C248AB77600D61123 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 					95FBFA74248AB77600D61123 = {
 						CreatedOnToolsVersion = 11.5;
@@ -405,6 +458,7 @@
 					};
 					95FBFA8F248AB79C00D61123 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 					95FBFA97248AB79C00D61123 = {
 						CreatedOnToolsVersion = 11.5;
@@ -487,13 +541,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95FBFA45248AB63F00D61123 /* ViewController.swift in Sources */,
 				95FBFA41248AB63F00D61123 /* AppDelegate.swift in Sources */,
 				95FBFA62248AB69600D61123 /* GridViewCell.swift in Sources */,
 				95FBFA43248AB63F00D61123 /* SceneDelegate.swift in Sources */,
-				95FBFA65248AB6B300D61123 /* ExtensionUIImageView.swift in Sources */,
 				95FBFA63248AB69600D61123 /* CollectionViewController.swift in Sources */,
-				95FBFA67248AB6E200D61123 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +560,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951BBFCB248BAF45002E0DD0 /* RemoteFeedLoader.swift in Sources */,
+				95FBFAB4248ADEC900D61123 /* User.swift in Sources */,
+				951BBFC7248B9F24002E0DD0 /* HTTPClientResult.swift in Sources */,
+				95FBFAB0248AC43F00D61123 /* ExtensionUIImageView.swift in Sources */,
+				951BBFCA248BAF41002E0DD0 /* HTTPClient.swift in Sources */,
+				95FBFAAF248AC1CF00D61123 /* Cache.swift in Sources */,
+				951BBFCC248BAF48002E0DD0 /* RemoteFeedError.swift in Sources */,
+				951BBFC9248BAF3D002E0DD0 /* LoadFeedResult.swift in Sources */,
+				95FBFAB3248AC66C00D61123 /* FeedLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,7 +576,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95FBFA7D248AB77600D61123 /* FeedLoaderiOSTests.swift in Sources */,
+				951BBFCD248BAF8A002E0DD0 /* RemoteFeedLoaderTests.swift in Sources */,
+				95FBFAAA248ABEC500D61123 /* FeedLoaderiOSTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +585,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				951BBFC4248B9CD5002E0DD0 /* RemoteFeedError.swift in Sources */,
+				951BBFC0248B28DC002E0DD0 /* RemoteFeedLoader.swift in Sources */,
+				951BBFBE248B284A002E0DD0 /* HTTPClient.swift in Sources */,
+				95FBFAB5248ADECE00D61123 /* User.swift in Sources */,
+				95FBFAB2248AC66100D61123 /* FeedLoader.swift in Sources */,
+				951BBFC2248B2931002E0DD0 /* LoadFeedResult.swift in Sources */,
+				951BBFC6248B9CF8002E0DD0 /* HTTPClientResult.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,7 +599,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95FBFA9E248AB79C00D61123 /* FeedLoaderTests.swift in Sources */,
+				95FBFAB8248AFFF100D61123 /* RemoteFeedLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +668,7 @@
 		95FBFA5B248AB64100D61123 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -672,6 +741,7 @@
 		95FBFA5C248AB64100D61123 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1335,6 +1405,7 @@
 		95FBFAA5248AB79C00D61123 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1407,6 +1478,7 @@
 		95FBFAA6248AB79C00D61123 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
