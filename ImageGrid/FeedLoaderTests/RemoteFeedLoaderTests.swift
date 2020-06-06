@@ -44,16 +44,16 @@ class RemoteFeedLoaderTests: XCTestCase {
  // MARK Helpers
     
     private class HTTPClientSpy: HTTPClient {
-        var requestedURLs = [URL]()
-        var capturedErrors = [RemoteFeedError]()
+        var requestedURLs: [URL] {
+            return invocations.map{ $0.url }
+        }
         var completions = [(RemoteFeedError)->Void]()
-        var error: RemoteFeedError?
+        var invocations = [(url: URL, completion: (RemoteFeedError)->Void)]()
         func get(from url: URL, completion: @escaping (RemoteFeedError) -> Void) {
-            completions.append(completion)
-            requestedURLs.append(url)
+            invocations.append ((url:url,completion:completion))
         }
         func complete(with error: RemoteFeedError, at index: Int = 0) {
-            completions[index](error)
+            invocations[index].completion(error)
         }
     }
 
