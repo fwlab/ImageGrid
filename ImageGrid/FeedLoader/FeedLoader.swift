@@ -10,5 +10,5 @@ import Foundation
 
 
 public protocol FeedLoader {
-    func load(completion: @escaping (RemoteFeedError)->Void )
+    func load(completion: @escaping (RemoteFeedError?,HTTPURLResponse?)->Void )
 }

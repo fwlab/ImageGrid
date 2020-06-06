@@ -9,6 +9,7 @@ import Foundation
 
 public enum RemoteFeedError: String, Swift.Error {
     case connection = "connection"
+    case invalid = "invalid"
 }
 
 public final class RemoteFeedLoader: FeedLoader {
@@ -17,9 +18,13 @@ public final class RemoteFeedLoader: FeedLoader {
     private let client: HTTPClient
 
     
-    public func load(completion: @escaping (RemoteFeedError) -> Void) {
-        client.get(from: url) { (error) in
-            completion(.connection)
+    public func load(completion: @escaping (RemoteFeedError?,HTTPURLResponse?) -> Void) {
+        client.get(from: url) { (error,response) in
+            if response != nil {
+                completion(.invalid, response)
+            } else {
+                completion(.connection,nil)
+            }
         }
         
     }
