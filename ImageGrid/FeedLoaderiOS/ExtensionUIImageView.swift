@@ -7,9 +7,24 @@
 
 import UIKit
 
-let imageCache = NSCache<AnyObject, AnyObject>()
+public class ImageLoader {
+    var client: URLSession
+    public static var shared: ImageLoader = ImageLoader()
+    private init () {
+        let cache = URLCache(memoryCapacity: 1024 * 1024 * 10,
+                             diskCapacity: 1024 * 1024 * 100,
+                             diskPath: nil)
+        let configuration = URLSessionConfiguration.default
+        configuration.urlCache = cache
+        self.client = URLSession(configuration: configuration)
+    }
+}
 
-extension UIImageView {
+
+
+public let imageCache = NSCache<AnyObject, AnyObject>()
+
+public extension UIImageView {
     func fetchImage(from url:URL) {
         self.image = nil
         let imageFromCache = imageCache.object(forKey: url as AnyObject)

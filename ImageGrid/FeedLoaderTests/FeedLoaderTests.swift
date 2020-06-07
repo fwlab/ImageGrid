@@ -8,25 +8,37 @@
 import XCTest
 @testable import FeedLoader
 
-class FeedLoaderTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+
+class RemoteFeedLoaderTests: XCTestCase {
+
+
+    func testLoaderHasURL() throws {
+        let feedLoader: RemoteFeedLoader = makeSUT()
+        XCTAssertNotNil(feedLoader.url)
+    }
+    
+    func testLoaderInstantiation() throws {
+        let feedLoader: RemoteFeedLoader = makeSUT()
+        XCTAssertNotNil(feedLoader)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    
+ // MARK Helpers
+    
+    func anyUrl() -> URL {
+        return URL(string:"https://any-url.com/")!
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    private func makeSUT() -> RemoteFeedLoader {
+       return RemoteFeedLoader(url: anyUrl(), client: HTTPClientSpy() )
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    private class HTTPClientSpy: HTTPClient {
+        var requestedURLs = [URL]()
+        func get(from url: URL) {
+            requestedURLs.append(url)
         }
     }
 
