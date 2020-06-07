@@ -42,7 +42,6 @@ public final class RemoteFeedLoader: FeedLoader {
     }
     
     private func decode(data:Data) -> [User]? {
-        let dataAsString = String(data: data, encoding: .utf8)
         let decoder = JSONDecoder()
         if let results = try? decoder.decode(Results.self, from: data) {
             return results.results
