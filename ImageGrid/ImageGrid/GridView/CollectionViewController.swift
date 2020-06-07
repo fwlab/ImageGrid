@@ -17,16 +17,11 @@ class CollectionViewController: UICollectionViewController {
     func loadData() {
         remoteFeedLoader.load { [weak self] (result) in
             switch result {
-                
-            case .success((let users, let response)):
-                if response.statusCode == 200 {
+            case .success(let users):
                     DispatchQueue.main.async {
                         self?.users = users
                         self?.collectionView.reloadData()
                     }
-                } else {
-                    print("could not load data")
-                }
             case .failure(_):
                 print("could not load data")
             }
