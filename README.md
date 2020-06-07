@@ -5,7 +5,7 @@ Displays a grid of images from an API feed.
 structured in 3 targets:
 - ImageGrid - The iOS "app" which only displays the images as a Collection View - FlowLayout, with preload and caching.
 - FeedLoaderiOS - the network layer for iOS, as an iOS framework. 
-   It includes an extension of UIImageView whic loads and caches images from an URL.
+   It includes an extension of UIImageView which loads and caches images from an URL.
 - FeedLoader - the network part, except the UIImageView extension, as a MacOS framework.
 
 All targets have their own tests, the tests for FeedLoader actually compile and work for both iOS and MacOS.
