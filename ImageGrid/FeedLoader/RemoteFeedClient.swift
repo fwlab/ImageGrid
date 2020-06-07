@@ -32,7 +32,7 @@ public class RemoteFeedClient: HTTPClient {
             }.resume()
         }
     public init(){
-        let cache = URLCache(memoryCapacity: 1000_000, diskCapacity: 10_000_000) // these numbers will need to be tuned!
+        let cache = URLCache(memoryCapacity: 1000_000, diskCapacity: 10_000_000, diskPath: nil) // these numbers will need to be tuned!
         let configuration = URLSessionConfiguration.default
         configuration.urlCache = cache
         let session = URLSession(configuration: configuration)
