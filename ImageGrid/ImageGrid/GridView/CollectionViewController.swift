@@ -45,8 +45,6 @@ class CollectionViewController: UICollectionViewController {
 
     }
 
- 
-
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
