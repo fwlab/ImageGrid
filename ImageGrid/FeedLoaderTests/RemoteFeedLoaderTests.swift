@@ -239,7 +239,6 @@ class RemoteFeedLoaderTests: XCTestCase {
         XCTAssertEqual(capturedErrors,[])
     }
 
-    
     // verify end to end
     func test_load_deliversEndToEnd() throws {
         let expect = expectation(description: "finished loading")
@@ -263,8 +262,6 @@ class RemoteFeedLoaderTests: XCTestCase {
         XCTAssertEqual(capturedErrors,[])
     }
 
-    
-    
     
     // MARK Helpers
 
@@ -309,12 +306,8 @@ class RemoteFeedLoaderTests: XCTestCase {
             if let response = HTTPURLResponse(url: requestedURLs[index], statusCode: withStatusCode, httpVersion: nil, headerFields: nil) {
                 invocations[index].completion(.success(data,response))
             }
-
         }
-        
-
     }
-
 }
 
     func makeValidJSON() -> Data {

@@ -19,6 +19,8 @@
 		951BBFCB248BAF45002E0DD0 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951BBFBF248B28DC002E0DD0 /* RemoteFeedLoader.swift */; };
 		951BBFCC248BAF48002E0DD0 /* RemoteFeedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951BBFC3248B9CD5002E0DD0 /* RemoteFeedError.swift */; };
 		951BBFCD248BAF8A002E0DD0 /* RemoteFeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFAB6248AFFF100D61123 /* RemoteFeedLoaderTests.swift */; };
+		95B1AFC7248D7B1700E48566 /* RemoteFeedClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1AFC6248D7B1700E48566 /* RemoteFeedClient.swift */; };
+		95B1AFC8248D7B1700E48566 /* RemoteFeedClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B1AFC6248D7B1700E48566 /* RemoteFeedClient.swift */; };
 		95FBFA41248AB63F00D61123 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA40248AB63F00D61123 /* AppDelegate.swift */; };
 		95FBFA43248AB63F00D61123 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FBFA42248AB63F00D61123 /* SceneDelegate.swift */; };
 		95FBFA48248AB63F00D61123 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95FBFA46248AB63F00D61123 /* Main.storyboard */; };
@@ -101,6 +103,7 @@
 		951BBFC1248B2931002E0DD0 /* LoadFeedResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedResult.swift; sourceTree = "<group>"; };
 		951BBFC3248B9CD5002E0DD0 /* RemoteFeedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedError.swift; sourceTree = "<group>"; };
 		951BBFC5248B9CF8002E0DD0 /* HTTPClientResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientResult.swift; sourceTree = "<group>"; };
+		95B1AFC6248D7B1700E48566 /* RemoteFeedClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedClient.swift; sourceTree = "<group>"; };
 		95FBFA3D248AB63F00D61123 /* ImageGrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageGrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95FBFA40248AB63F00D61123 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95FBFA42248AB63F00D61123 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -255,6 +258,7 @@
 				951BBFC1248B2931002E0DD0 /* LoadFeedResult.swift */,
 				951BBFBD248B284A002E0DD0 /* HTTPClient.swift */,
 				951BBFBF248B28DC002E0DD0 /* RemoteFeedLoader.swift */,
+				95B1AFC6248D7B1700E48566 /* RemoteFeedClient.swift */,
 				951BBFC3248B9CD5002E0DD0 /* RemoteFeedError.swift */,
 				951BBFC5248B9CF8002E0DD0 /* HTTPClientResult.swift */,
 				95FBFA93248AB79C00D61123 /* Info.plist */,
@@ -562,6 +566,7 @@
 			files = (
 				951BBFCB248BAF45002E0DD0 /* RemoteFeedLoader.swift in Sources */,
 				95FBFAB4248ADEC900D61123 /* User.swift in Sources */,
+				95B1AFC7248D7B1700E48566 /* RemoteFeedClient.swift in Sources */,
 				951BBFC7248B9F24002E0DD0 /* HTTPClientResult.swift in Sources */,
 				95FBFAB0248AC43F00D61123 /* ExtensionUIImageView.swift in Sources */,
 				951BBFCA248BAF41002E0DD0 /* HTTPClient.swift in Sources */,
@@ -585,6 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95B1AFC8248D7B1700E48566 /* RemoteFeedClient.swift in Sources */,
 				951BBFC4248B9CD5002E0DD0 /* RemoteFeedError.swift in Sources */,
 				951BBFC0248B28DC002E0DD0 /* RemoteFeedLoader.swift in Sources */,
 				951BBFBE248B284A002E0DD0 /* HTTPClient.swift in Sources */,
