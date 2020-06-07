@@ -36,4 +36,5 @@ public class RemoteFeedClient: HTTPClient {
                 }
             }.resume()
         }
+    public init(){}
 }
