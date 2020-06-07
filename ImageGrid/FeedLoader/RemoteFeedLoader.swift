@@ -15,7 +15,7 @@ public final class RemoteFeedLoader: FeedLoader {
     public typealias FeedResult = Result<([User],HTTPURLResponse),RemoteFeedError>
     
     public func load(completion: @escaping (FeedResult) -> Void) {
-        client.get(from: url) { result in
+        client.get(from: url) { [weak self] result in
             switch result {
             case .success(let data, let response):
                 guard response.statusCode == 200
@@ -25,7 +25,7 @@ public final class RemoteFeedLoader: FeedLoader {
                 }
                 // ensure it is valid JSON
                 if let _ = try? JSONSerialization.jsonObject(with: data) {
-                    if let results = self.decode(data: data) {
+                    if let results = self?.decode(data: data) {
                         print (results)
                         completion(.success((results, response)))
                     }
