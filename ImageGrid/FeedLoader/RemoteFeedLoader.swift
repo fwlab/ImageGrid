@@ -25,7 +25,6 @@ public final class RemoteFeedLoader: FeedLoader {
                 }
                 // ensure it is valid JSON
                 if let results = self?.decode(data: data) {
-                        print (results)
                         completion(.success(results))
                 } else {
                   completion(.failure(.invalidData))
@@ -46,7 +45,7 @@ public final class RemoteFeedLoader: FeedLoader {
         if let results = try? decoder.decode(Results.self, from: data) {
             return results.results
         } else {
-            print ("decoding error")
+            // decoding error
             return nil
         }
     }

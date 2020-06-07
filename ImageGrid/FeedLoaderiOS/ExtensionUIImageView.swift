@@ -35,7 +35,7 @@ public extension UIImageView {
             URLSession.shared.dataTask(with: url) { (data, response, err) in
                 guard err == nil
                     else {
-                        print (err?.localizedDescription)
+                        // received error from back end
                         return
                 }
                 DispatchQueue.main.async {

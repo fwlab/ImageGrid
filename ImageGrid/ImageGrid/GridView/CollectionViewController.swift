@@ -14,6 +14,12 @@ private let reuseIdentifier = "GridViewCell"
 class CollectionViewController: UICollectionViewController {
     let remoteFeedLoader = RemoteFeedLoader(from: URL(string: "https://randomuser.me/api/?results=500")!,
                                             client: RemoteFeedClient())
+    func showError() {
+        let alert = UIAlertController(title: "No connection?", message: "I need an internet connection!", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true)
+    }
     func loadData() {
         remoteFeedLoader.load { [weak self] (result) in
             switch result {
@@ -23,7 +29,9 @@ class CollectionViewController: UICollectionViewController {
                         self?.collectionView.reloadData()
                     }
             case .failure(_):
-                print("could not load data")
+                DispatchQueue.main.async {
+                    self?.showError()
+                }
             }
         }
     }
@@ -67,14 +75,16 @@ class CollectionViewController: UICollectionViewController {
     
 }
 
-
 extension CollectionViewController: UICollectionViewDataSourcePrefetching {
+    
+    // preloads images before they are actually needed, if fast scrolling
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        print ("Prefetch: \(indexPaths)" )
-        
         for item in indexPaths.map({ip in ip.row }) {
             if let urlString = users[item].picture.thumbnail {
-                print (urlString)
+                if let url = URL(string: urlString) {
+                    let iv = UIImageView()
+                    iv.fetchImage(from: url)
+                }
             }
         }
     }
