@@ -24,4 +24,6 @@ TODOS:
 - The Remote client is just a wrapper on URLSession, could be wrapped inside a more sophisticated "chain of responsibility" or similar pattern
 - refactoring tests 
 - instantiating a diffable CollectionView on iOS13
-
+- loading the feed and the images in streaming mode/batches (loading the images asyncronously while partial incremental load of the feed is taking place (allowing for thousands or tens of thousands of images to be loaded)
+- more performance tuning, e.g.: using CALayers rather than UIKit
+- more precise geometry of Collection View.
