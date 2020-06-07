@@ -10,8 +10,8 @@ structured in 3 targets:
 
 All targets have their own tests, the tests for FeedLoader actually compile and work for both iOS and MacOS.
 Rationale: it is faster to test on a Mac than it is on a iOS simulator.
-There is a single Back to End test, which relies on the network: This is not ideal, and will need to be improved.
-Tests execution is quick, less than a second, the Back to End takes most of the time :-)
+There is a single End to End test, which relies on the network: This is not ideal, and will need to be improved.
+Tests execution is quick, less than a second, the End to End takes most of the time :-)
 
 TODOS:
 - adding more tests
