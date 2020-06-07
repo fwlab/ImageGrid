@@ -317,10 +317,6 @@ class RemoteFeedLoaderTests: XCTestCase {
 
 }
 
-    
-    
-
-
     func makeValidJSON() -> Data {
        return Data("{\"results\":[{\"gender\":\"male\",\"name\":{\"title\":\"Mr\",\"first\":\"Konsta\",\"last\":\"Juntunen\"},\"location\":{\"street\":{\"number\":3426,\"name\":\"Hermiankatu\"},\"city\":\"Varkaus\",\"state\":\"Kainuu\",\"country\":\"Finland\",\"postcode\":98452,\"coordinates\":{\"latitude\":\"-8.2002\",\"longitude\":\"-32.4747\"},\"timezone\":{\"offset\":\"-3:30\",\"description\":\"Newfoundland\"}},\"email\":\"konsta.juntunen@example.com\",\"login\":{\"uuid\":\"73552e3f-bd0f-43c9-9ea8-5c8d5addb516\",\"username\":\"purpleleopard418\",\"password\":\"times\",\"salt\":\"TZa0mXKd\",\"md5\":\"541fc87c70b99c38ea9ef2ad066d25c0\",\"sha1\":\"83e919b1a08a350f6e87896311426d6c88541319\",\"sha256\":\"3f8100ac1d6047a4d968dace3203b5c51edbef94c8e347aaa789d87728e43b7b\"},\"dob\":{\"date\":\"1988-04-28T16:06:34.709Z\",\"age\":32},\"registered\":{\"date\":\"2011-08-28T09:49:19.053Z\",\"age\":9},\"phone\":\"04-688-730\",\"cell\":\"044-628-78-48\",\"id\":{\"name\":\"HETU\",\"value\":\"NaNNA201undefined\"},\"picture\":{\"large\":\"https://randomuser.me/api/portraits/men/81.jpg\",\"medium\":\"https://randomuser.me/api/portraits/med/men/81.jpg\",\"thumbnail\":\"https://randomuser.me/api/portraits/thumb/men/81.jpg\"},\"nat\":\"FI\"}],\"info\":{\"seed\":\"548a8dcaf10f3e20\",\"results\":1,\"page\":1,\"version\":\"1.3\"}}".utf8)
     }
