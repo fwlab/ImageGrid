@@ -12,28 +12,22 @@ private let reuseIdentifier = "GridViewCell"
 
 
 class CollectionViewController: UICollectionViewController {
-    
+    let remoteFeedLoader = RemoteFeedLoader(from: URL(string: "https://randomuser.me/api/?results=500")!,
+                                            client: RemoteFeedClient())
     func loadData() {
-        let jsonUrlString = "https://randomuser.me/api/?results=500"
-        guard let url = URL (string: jsonUrlString)
-        else { return }
-        
-        URLSession.shared.dataTask(with: url) { (data, response, err) in
-            
-            guard let data = data else { return }
-            let dataAsString = String(data: data, encoding: .utf8)
-            let decoder = JSONDecoder()
-            if let results = try? decoder.decode(Results.self, from: data) {
-            
-                DispatchQueue.main.async {
-                    self.users = results.results;
-                    self.collectionView.reloadData()
-                }
-            } else {
-                print ("decoding error")
+        remoteFeedLoader.load { [weak self] (result) in
+            switch result {
+            case .success(let users):
+                    DispatchQueue.main.async {
+                        self?.users = users
+                        self?.collectionView.reloadData()
+                    }
+            case .failure(_):
+                print("could not load data")
             }
-        }.resume()
+        }
     }
+    
 
     var users: [User] = []
     

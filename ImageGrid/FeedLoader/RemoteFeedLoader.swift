@@ -12,7 +12,7 @@ public final class RemoteFeedLoader: FeedLoader {
     private let url: URL
     private let client: HTTPClient
 
-    public typealias FeedResult = Result<([User],HTTPURLResponse),RemoteFeedError>
+    public typealias FeedResult = Result<[User],RemoteFeedError>
     
     public func load(completion: @escaping (FeedResult) -> Void) {
         client.get(from: url) { [weak self] result in
@@ -26,7 +26,7 @@ public final class RemoteFeedLoader: FeedLoader {
                 // ensure it is valid JSON
                 if let results = self?.decode(data: data) {
                         print (results)
-                        completion(.success((results, response)))
+                        completion(.success(results))
                 } else {
                   completion(.failure(.invalidData))
                 }
@@ -42,8 +42,6 @@ public final class RemoteFeedLoader: FeedLoader {
     }
     
     private func decode(data:Data) -> [User]? {
-        
-        let dataAsString = String(data: data, encoding: .utf8)
         let decoder = JSONDecoder()
         if let results = try? decoder.decode(Results.self, from: data) {
             return results.results

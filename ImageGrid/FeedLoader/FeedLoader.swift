@@ -7,7 +7,7 @@
 
 import Foundation
 
-public typealias RemoteFeedResult = Result<([User],HTTPURLResponse),RemoteFeedError>
+public typealias RemoteFeedResult = Result<([User]),RemoteFeedError>
 
 public protocol FeedLoader {
     func load(completion: @escaping (RemoteFeedResult)->Void )
