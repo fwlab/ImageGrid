@@ -47,7 +47,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         var capturedErrors = [RemoteFeedError]()
         sut.load { result in
             switch result {
-            case .success((_,_)):
+            case .success(_):
                 XCTFail()
                 break
             case .failure(let error):
@@ -64,7 +64,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         var capturedErrors = [RemoteFeedError]()
         sut.load { result in
             switch result {
-            case .success((_,_)):
+            case .success(_):
                 XCTFail()
                 break
             case .failure(let error):
@@ -86,7 +86,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         simulatedResponsesCodes.enumerated().forEach { index,responseCode in
             sut.load { result in
                 switch result {
-                case .success((_,_)):
+                case .success(_):
                     XCTFail()
                     break
                 case .failure(let error):
@@ -94,7 +94,6 @@ class RemoteFeedLoaderTests: XCTestCase {
                 }
             }
             client.complete(withStatusCode: responseCode, data: makeValidJSON(), at: index)
-            
             XCTAssertEqual(capturedErrors[index],RemoteFeedError.invalidResponse)
         }
     }
@@ -109,7 +108,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         simulatedResponsesCodes.enumerated().forEach { index,responseCode in
             sut.load { result in
                 switch result {
-                case .success((_,_)):
+                case .success(_):
                     break
                 case .failure(let error):
                     capturedErrors.append(error)
@@ -117,7 +116,6 @@ class RemoteFeedLoaderTests: XCTestCase {
             }
             let data = Data("{\"results\": []}".utf8)
             client.complete(withStatusCode: responseCode,data:data, at: index)
-            
             XCTAssertEqual(capturedErrors.count,0)
         }
     }
@@ -132,8 +130,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         simulatedResponsesCodes.enumerated().forEach { index,responseCode in
             sut.load { result in
                 switch result {
-                case .success(( _,let response)):
-                    XCTAssertNotNil(response)
+                case .success(_):
                     break
                 case .failure(let error):
                     capturedErrors.append(error)
@@ -157,8 +154,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         simulatedResponsesCodes.enumerated().forEach { index,responseCode in
             sut.load { result in
                 switch result {
-                case .success(( _,let response)):
-                    XCTAssertEqual(response.statusCode,200)
+                case .success(_):
                     break
                 case .failure(let error):
                     capturedErrors.append(error)
@@ -167,7 +163,6 @@ class RemoteFeedLoaderTests: XCTestCase {
             }
             let data = Data("{\"results\": []}".utf8)
             client.complete(withStatusCode: responseCode,data:data, at: index)
-            
             XCTAssertEqual(capturedErrors,[])
         }
     }
@@ -179,8 +174,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         let responseCode = 200
         sut.load { result in
                 switch result {
-                case .success(( _,let response)):
-                    XCTAssertEqual(response.statusCode,200)
+                case .success(_):
                     XCTFail()
                     break
                 case .failure(let error):
@@ -188,7 +182,6 @@ class RemoteFeedLoaderTests: XCTestCase {
                 }
         }
         client.complete(withStatusCode: responseCode, data: invalidJSON() )
-            
         XCTAssertEqual(capturedErrors,[RemoteFeedError.invalidData])
         }
     
@@ -200,8 +193,7 @@ class RemoteFeedLoaderTests: XCTestCase {
             let responseCode = 200
             sut.load { result in
                 switch result {
-                case .success((let users,let response)):
-                    XCTAssertEqual(response.statusCode,200)
+                case .success((let users)):
                     if let urlString = users[0].picture.thumbnail
                     {
                         XCTAssertEqual(urlString, "https://randomuser.me/api/portraits/thumb/men/81.jpg")
@@ -225,8 +217,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         let responseCode = 200
         sut.load { result in
             switch result {
-            case .success((let users,let response)):
-                XCTAssertEqual(response.statusCode,200)
+            case .success((let users)):
                 expect.fulfill()
                 if let urlString = users[0].picture.thumbnail
                 {
@@ -261,8 +252,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         var capturedErrors = [RemoteFeedError]()
         sut.load { result in
             switch result {
-            case .success((let users,let response)):
-                XCTAssertEqual(response.statusCode,200)
+            case .success(let users):
                 XCTAssertEqual(users.count,500)
                 expect.fulfill()
             case .failure(let error):
