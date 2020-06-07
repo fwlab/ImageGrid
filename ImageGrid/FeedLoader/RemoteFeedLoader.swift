@@ -24,13 +24,9 @@ public final class RemoteFeedLoader: FeedLoader {
                         return
                 }
                 // ensure it is valid JSON
-                if let _ = try? JSONSerialization.jsonObject(with: data) {
-                    if let results = self?.decode(data: data) {
+                if let results = self?.decode(data: data) {
                         print (results)
                         completion(.success((results, response)))
-                    }
-                    
-
                 } else {
                   completion(.failure(.invalidData))
                 }
